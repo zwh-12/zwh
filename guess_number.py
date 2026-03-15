@@ -4,7 +4,7 @@ print("欢迎来到数字猜谜游戏！")
 
 # 主游戏循环
 while True:
-    # 生成1-100随机整数
+    # 生成谜底：1-100随机整数
     answer = random.randint(1, 100)
     count = 0
     
@@ -14,7 +14,7 @@ while True:
     while True:
         guess = input("请输入你的猜测：")
         
-        # 非数字处理
+        # 非数字处理：避免程序崩溃
         if not guess.isdigit():
             print("请输入有效的数字！")
             continue
@@ -22,7 +22,7 @@ while True:
         guess = int(guess)
         count += 1
         
-        # 判断结果
+        # 判断结果并提示
         if guess > answer:
             print(f"你猜的数字是 {guess}，猜大了！")
         elif guess < answer:
@@ -31,7 +31,7 @@ while True:
             print(f"恭喜你猜对了！答案是 {answer}，共猜了 {count} 次。")
             break
     
-    # 重新开始
+    # 询问是否重新开始
     again = input("是否重新开始？(y/n)：")
     if again.lower() != "y":
         print("感谢游玩，再见！")
