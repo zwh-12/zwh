@@ -60,6 +60,8 @@ while True:
             break
         elif again == "n":
             print("程序已退出")
-            exit()
+            break
         else:
             print("请输入 y 或 n")
+    if again == "n":
+        break
